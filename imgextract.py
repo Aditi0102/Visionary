@@ -9,7 +9,7 @@ class Extractor(object):
         self.skip = FRAME_SKIP
 
     def extract(self, path, DIR = 'tmp'):
-        folder = "./Data/train/" + DIR
+        folder = "./Data/" + DIR
         if not os.path.exists(folder):
             os.makedirs(folder)
         
