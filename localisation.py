@@ -7,7 +7,7 @@ hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 cv2.startWindowThread()
 
-cap = cv2.VideoCapture("/Train/Data/Sample/test2.mp4")
+cap = cv2.VideoCapture("./Data/Dummy/1.mp4")
  
 while(True):
 
