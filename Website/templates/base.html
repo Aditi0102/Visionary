@@ -9,10 +9,34 @@
   <meta name="keywords" content="Model Website, Keras, Tensorflow">
   <meta name="author" content="Avishrant Sharma, Spriha Gautam, Ritik Dhiman, Aditi Agarwal">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Project Interstice">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta property="og:image" content="static/assets/img/favicon.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <!-- Service Worker Registration -->
+  <script type="text/javascript">
+    // Initialize the service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function (registration) {
+        // Registration was successful
+        console.log('portfolio-progressive-web-app: ServiceWorker registration successful');
+      }, function (err) {
+        // registration failed :(
+        console.log('portfolio-progressive-web-app: ServiceWorker registration failed: ', err);
+      });
+    }
+
+  </script>
   <title>
     Home Page
   </title>
   <link rel='stylesheet' href='{%static "style/base.css"%}'>
+  <link rel='stylesheet' href='{%static "style/scroll.css"%}'>
   <link href="static/assets/img/favicon.png" rel="icon">
   <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -40,49 +64,28 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="index.html"> </a></h1>
+        <h1 class="text-light"><a href="{%url 'home'%}"> </a></h1>
 
-        <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="{%url 'home'%}"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Tech Stack</a></li>
           <li><a href="#portfolio">Results</a></li>
-          <!-- <li><a href="#pricing">Pricing</a></li> -->
           <li><a href="#team">Team</a></li>
-          <!-- <li class="drop-down"><a href="">Drop Down</a> -->
-          <!-- <ul>
-                  <li><a href="#">Drop Down 1</a></li>
-                  <li class="drop-down"><a href="#">Drop Down 2</a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul> -->
-          <!-- </li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
-                  <li><a href="#">Drop Down 5</a></li>
-                </ul> -->
-          </li>
           <li><a href="#contact">Contact</a></li>
-
         </ul>
-        
       </nav><!-- .nav-menu -->
-
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
-    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel"> 
-      
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
@@ -148,7 +151,6 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
@@ -181,22 +183,18 @@
               rather make the whole process in a real time frame so that the deed is detected before its too late!
 
             </p>
-            <!-- <a href="#" class="btn-learn-more">Learn More</a>-->
           </div>
         </div>
 
       </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container">
+      <!-- ======= Features Section ======= -->
+      <div class="container features my-5">
 
         <ul class="nav nav-tabs row d-flex">
           <li class="nav-item col-3" data-aos="zoom-in">
             <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
               <i class="ri-bar-chart-2-fill"></i>
-              <h4 class="d-none d-lg-block">STATSTICS</h4>
+              <h4 class="d-none d-lg-block">STATISTICS</h4>
             </a>
           </li>
           <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
@@ -224,15 +222,17 @@
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                 <h3>Street Violence takes a variety of forms including homicide, rape, robbery, assaults etc.</h3>
+                <br>
 
                 <p class="font-italic">
                   The incidents of Street Violence resonate through out the world and the women community is worst
                   affected by the lack of an efficient monitoring system resulting in hostile situations.
                 </p>
                 <ul>
-                  <li><i class="ri-check-double-line"></i> A survey conducted by Stop Street Harassment Report, In US
-                    65% women experienced Street Violence</li>
-                  <li><i class="ri-check-double-line"></i> In India a woman faces harassment in public places every 51
+                  <li><i class="ri-check-double-line"></i> A survey conducted by Stop Street Harassment Report reveiled
+                    that
+                    65% of women in US have experienced some kind of Street Violence</li>
+                  <li><i class="ri-check-double-line"></i> In India, a woman faces harassment in public places every 51
                     minutes. </li>
                   <li><i class="ri-check-double-line"></i> According to National Crime Records Bureau (NCRB), there were
                     36,735 cases of rape across desolate streets and places.</li>
@@ -253,7 +253,7 @@
                 <h3>Lack of a Proper Surveillance system has affected every generation.</h3>
                 <br>
                 <p>
-                  Innumerable innocent men and boys face abuse in public places which goes undetected and unreported due
+                  Innumerable individuals face abuse in public places which goes undetected and unreported due
                   to the rigid and worn out process of CCTV cameras and all crimes are pushed deep down in oblivion.
                 </p>
 
@@ -261,11 +261,13 @@
                   <li><i class="ri-check-double-line"></i> In 1994, an estimated 1.4 million people were treated in
                     hospital emergency departments for violence-related injuries. Nearly one-half of all the injuries
                     treated occurred in public buildings or on the street.</li>
-                  <li><i class="ri-check-double-line"></i>In 2007, Students ages 12 to 18 were victims of about 1.5
-                    million non-fatal crimes when they were at school compared to about 1.1 million non-fatal crimes
+                  <li><i class="ri-check-double-line"></i>In 2007, students between the ages of 12 to 18 were victims of
+                    about 1.5
+                    million non-fatal crimes when they were at school, compared to about 1.1 million non-fatal crimes
                     while they were away from school.</li>
-                  <li><i class="ri-check-double-line"></i> Among high school students in grades 9-12, about 12% said
-                    they got into a fight on school property.</li>
+                  <li><i class="ri-check-double-line"></i> Among high school students in grades 9-12, nearly 12% got
+                    into a fight
+                    on school property.</li>
 
                 </ul>
               </div>
@@ -280,14 +282,14 @@
                 <h3>When Violence becomes the last refuge of Incompetent Householdes.</h3>
                 <br>
                 <p>
-                  Domestic violence has serious economic, social and health consequences – not only for women and
-                  children, but also for the wider family. It is an acute problem in India.NFHS data indicate that over
+                  Domestic violence has serious economic, social and health consequences. It is an acute problem in
+                  India. NFHS data indicate that over
                   30% of Indian women have been physically, sexually or emotionally abused by their husbands at some
                   point in their lives.
 
                 </p>
                 <ul>
-                  <li><i class="ri-check-double-line"></i>Between 2004 and 2008, About 1 in 3 violent crimes occurred in
+                  <li><i class="ri-check-double-line"></i>Between 2004 and 2008, about 1 in 3 violent crimes occurred in
                     or near the victim’s own home.</li>
                   <li><i class="ri-check-double-line"></i>Almost two thirds of all property crimes took place in or near
                     the home of the household members. </li>
@@ -305,21 +307,17 @@
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                 <h3> The Number and Underscore of Public Violence.</h3>
-
                 <br>
-
-
-
                 <ul>
-                  <li><i class="ri-check-double-line"></i> In the year between 1993- 1999, Workplace violence accounted
+                  <li><i class="ri-check-double-line"></i> From 1993- 1999, "Workplace Violence" accounted
                     for 18% of all violent crime.</li>
-                  <li><i class="ri-check-double-line"></i> According to NCVS, there occurs 1.7 million violent victims
+                  <li><i class="ri-check-double-line"></i> According to NCVS, there are over 1.7 million victims of
+                    violence
                     annually including 325,000 aggravated assaults, 36,500 rapes and sexual assaults, 70,000 robberies
                     and 900 homicides.
                   </li>
-                  <li><i class="ri-check-double-line"></i>In 2019, the FBI reported a total of 2,109.9 property crimes
-                    per 100,000 people, compared with 379.4
-                    violent crimes per 100,000 people. </li>
+                  <li><i class="ri-check-double-line"></i>In 2019, FBI reported a total of 2,109.9 property crimes
+                    per 100,000 people.</li>
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -328,35 +326,30 @@
             </div>
           </div>
         </div>
-
-
       </div>
-    </section><!-- End Features Section -->
-
-    <!-- ======= Cta Section ======= -->
-
-    <section id="cta" class="cta">
-      <div class="container">
-
+      <!-- ======= CTA Section ======= -->
+      <div class="container-fluid cta mt-5">
         <div class="row" data-aos="zoom-out">
+          <div class="col-lg-12 text-center text-lg-left">
+            <h3>Call To Action</h3>
+            <p>Practical Demonstration of our project, you just have to upload a video here and our model will predict
+              the results.</p>
+          </div>
           <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{form}}
-
-
-            <div class="col-lg-9 text-center text-lg-left">
-              <h3>Call To Action</h3>
-              <p>Practical Demonstration of our project, you just have to upload a video here and our model will predict
-                the results.</p>
-            </div>
-            <div class="col-lg-3 cta-btn-container text-center">
-              <button type="submit" class="cta-btn align-middle">Upload</button>
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                {% csrf_token %}
+                <input type="file" name="vid" required="" id="id_vid" hidden>
+                <label for="id_vid" class="cta-btn align-middle" style="cursor: pointer;">Choose Video File</label>
+              </div>
+              <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="cta-btn align-middle" style="outline: none; border: none;">Upload</button>
+              </div>
             </div>
           </form>
         </div>
-
       </div>
-    </section><!-- End Cta Section -->
+    </section>
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -396,35 +389,9 @@
                 then hosted on Amazon Web Services.</p>
             </div>
           </div>
-          <!-- <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
-              <div class="icon"><i class="las la-tachometer-alt" style="color:#41cf2e;"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><i class="las la-globe-americas" style="color: #d6ff22;"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
-              <div class="icon"><i class="las la-clock" style="color: #4680ff;"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-                soluta nobis est eligendi</p>
-            </div>
-          </div>
-        </div> -->
 
         </div>
-    </section><!-- End Services Section -->
+    </section>
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
@@ -434,7 +401,6 @@
           <h2>Results</h2>
           <p>Samples </p>
         </div>
-
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
           <li data-filter="*" class="filter-active">All</li>
           <li data-filter=".filter-app">Violence</li>
@@ -555,236 +521,9 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <!-- <section id="testimonials" class="testimonials">
-          <div class="container">
-    
-            <div class="section-title" data-aos="zoom-out">
-              <h2>Testimonials</h2>
-              <p>What they are saying about us</p>
-            </div>
-    
-            <div class="owl-carousel testimonials-carousel" data-aos="fade-up">
-    
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-    
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-    
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="static/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-    
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="static/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-    
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="static/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-    
-            </div>
-    
-          </div> -->
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Pricing Section ======= -->
-    <!-- <section id="pricing" class="pricing">
-          <div class="container">
-    
-            <div class="section-title" data-aos="zoom-out">
-              <h2>Pricing</h2>
-              <p>Our Competing Prices</p>
-            </div>
-    
-            <div class="row">
-    
-              <div class="col-lg-3 col-md-6">
-                <div class="box" data-aos="zoom-in">
-                  <h3>Free</h3>
-                  <h4><sup>$</sup>0<span> / month</span></h4>
-                  <ul>
-                    <li>Aida dere</li>
-                    <li>Nec feugiat nisl</li>
-                    <li>Nulla at volutpat dola</li>
-                    <li class="na">Pharetra massa</li>
-                    <li class="na">Massa ultricies mi</li>
-                  </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">Buy Now</a>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-                <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-                  <h3>Business</h3>
-                  <h4><sup>$</sup>19<span> / month</span></h4>
-                  <ul>
-                    <li>Aida dere</li>
-                    <li>Nec feugiat nisl</li>
-                    <li>Nulla at volutpat dola</li>
-                    <li>Pharetra massa</li>
-                    <li class="na">Massa ultricies mi</li>
-                  </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">Buy Now</a>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                  <h3>Developer</h3>
-                  <h4><sup>$</sup>29<span> / month</span></h4>
-                  <ul>
-                    <li>Aida dere</li>
-                    <li>Nec feugiat nisl</li>
-                    <li>Nulla at volutpat dola</li>
-                    <li>Pharetra massa</li>
-                    <li>Massa ultricies mi</li>
-                  </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">Buy Now</a>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                <div class="box" data-aos="zoom-in" data-aos-delay="300">
-                  <span class="advanced">Advanced</span>
-                  <h3>Ultimate</h3>
-                  <h4><sup>$</sup>49<span> / month</span></h4>
-                  <ul>
-                    <li>Aida dere</li>
-                    <li>Nec feugiat nisl</li>
-                    <li>Nulla at volutpat dola</li>
-                    <li>Pharetra massa</li>
-                    <li>Massa ultricies mi</li>
-                  </ul>
-                  <div class="btn-wrap">
-                    <a href="#" class="btn-buy">Buy Now</a>
-                  </div>
-                </div>
-              </div>
-    
-            </div>
-    
-          </div> -->
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= F.A.Q Section ======= -->
-    <!-- <section id="faq" class="faq">
-          <div class="container">
-    
-            <div class="section-title" data-aos="zoom-out">
-              <h2>F.A.Q</h2>
-              <p>Frequently Asked Questions</p>
-            </div>
-    
-            <ul class="faq-list">
-    
-              <li data-aos="fade-up" data-aos-delay="100">
-                <a data-bs-toggle="collapse" class="" data-bs-target="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="icofont-simple-up"></i></a>
-                <div id="faq1" class="collapse show" data-bs-parent=".faq-list">
-                  <p>
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                  </p>
-                </div>
-              </li>
-    
-              <li data-aos="fade-up" data-aos-delay="200">
-                <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="icofont-simple-up"></i></a>
-                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                  </p>
-                </div>
-              </li>
-    
-              <li data-aos="fade-up" data-aos-delay="300">
-                <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="icofont-simple-up"></i></a>
-                <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                  </p>
-                </div>
-              </li>
-    
-              <li data-aos="fade-up" data-aos-delay="400">
-                <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="icofont-simple-up"></i></a>
-                <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                  </p>
-                </div>
-              </li>
-    
-              <li data-aos="fade-up" data-aos-delay="500">
-                <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="icofont-simple-up"></i></a>
-                <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                  </p>
-                </div>
-              </li>
-    
-              <li data-aos="fade-up" data-aos-delay="600">
-                <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="icofont-simple-up"></i></a>
-                <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                  <p>
-                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-                  </p>
-                </div>
-              </li>
-    
-            </ul>
-    
-          </div> -->
     </section>
-    <!-- End F.A.Q Section
-    
-        <!-- ======= Team Section ======= -->
+
+    <!-- ======= Team Section ======= -->
     <section id="team" class="team">
       <div class="container">
 
@@ -800,9 +539,12 @@
               <div class="member-img">
                 <img src="static/assets/img/team/aditi.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href="https://github.com/Aditi0102" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></a>
-                  <a href="https://www.instagram.com/aditi_agrawal_20/" target="_blank" rel="noreferrer"><i class="icofont-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/aditi0102/" target="_blank" rel="noreferrer"><i class="icofont-linkedin"></i></a>
+                  <a href="https://github.com/Aditi0102" target="_blank" rel="noreferrer"><i
+                      class="fab fa-github"></i></a>
+                  <a href="https://www.instagram.com/aditi_agrawal_20/" target="_blank" rel="noreferrer"><i
+                      class="icofont-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/aditi0102/" target="_blank" rel="noreferrer"><i
+                      class="icofont-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -817,9 +559,12 @@
               <div class="member-img">
                 <img src="static/assets/img/team/avishrant.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href="https://github.com/AvishrantsSh" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></i></a>
-                  <a href="https://www.instagram.com/avishrant_sh/" target="_blank" rel="noreferrer"><i class="icofont-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/avishrant-sharma-1158591a2/" target="_blank" rel="noreferrer"><i class="icofont-linkedin"></i></a>
+                  <a href="https://github.com/AvishrantsSh" target="_blank" rel="noreferrer"><i
+                      class="fab fa-github"></i></i></a>
+                  <a href="https://www.instagram.com/avishrant_sh/" target="_blank" rel="noreferrer"><i
+                      class="icofont-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/avishrant-sharma-1158591a2/" target="_blank" rel="noreferrer"><i
+                      class="icofont-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -834,9 +579,12 @@
               <div class="member-img">
                 <img src="static/assets/img/team/ritik.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href="https://github.com/ritikdh440" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></a>
-                  <a href="https://www.instagram.com/ritik.dhiman/" target="_blank" rel="noreferrer"><i class="icofont-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/ritik-dhiman/" target="_blank" rel="noreferrer"><i class="icofont-linkedin"></i></a>
+                  <a href="https://github.com/ritikdh440" target="_blank" rel="noreferrer"><i
+                      class="fab fa-github"></i></a>
+                  <a href="https://www.instagram.com/ritik.dhiman/" target="_blank" rel="noreferrer"><i
+                      class="icofont-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/ritik-dhiman/" target="_blank" rel="noreferrer"><i
+                      class="icofont-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -851,9 +599,12 @@
               <div class="member-img">
                 <img src="static/assets/img/team/spriha.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href="https://github.com/sprihagautam12" target="_blank" rel="noreferrer"><i class="fab fa-github"></i></a>
-                  <a href="https://www.instagram.com/spriha_gautam/" target="_blank" rel="noreferrer"><i class="icofont-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/sprihagautam/" target="_blank" rel="noreferrer"><i class="icofont-linkedin"></i></a>
+                  <a href="https://github.com/sprihagautam12" target="_blank" rel="noreferrer"><i
+                      class="fab fa-github"></i></a>
+                  <a href="https://www.instagram.com/spriha_gautam/" target="_blank" rel="noreferrer"><i
+                      class="icofont-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/sprihagautam/" target="_blank" rel="noreferrer"><i
+                      class="icofont-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
@@ -866,93 +617,16 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section>
 
-    <!-- ======= Contact Section ======= -->
-    <!-- <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
-        </div>
-
-        <div class="row mt-5">
-
-          <div class="col-lg-4" data-aos="fade-right">
-            <div class="info">
-              <div class="address">
-                <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="icofont-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
-            </div>
-
-          </div> -->
-
-          <!-- <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
-    
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                      <div class="validate"></div>
-                    </div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                      <div class="validate"></div>
-                    </div>
-                  </div>
-                  <div class="form-group mt-3">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="form-group mt-3">
-                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                    <div class="validate"></div>
-                  </div>
-                  <div class="mb-3">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
-                  <div class="text-center"><button type="submit">Send Message</button></div>
-                </form>
-    
-              </div>
-    
-            </div> -->
-
-        </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
       <h3>Team Visionary</h3>
       <p>Unfurling the incognizance of Reality.</p>
-      <!-- <div class="social-links">
-        <a href="#" class="github"><i class="fab fa-github"></i>/a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-        <!-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div> --> 
+
       <div class="copyright">
         &copy; Copyright <strong><span>Team Visionary</span></strong>. All Rights Reserved
       </div>

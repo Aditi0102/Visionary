@@ -1,0 +1,22 @@
+{
+    "name": "Project Interstice",
+    "short_name": "Interstice",
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "description": "Team Visionary's Project Interstice",
+    "dir": "ltr",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    
+    "icons": [
+        {
+          "src": "/static/assets/img/favicon.png",
+          "type": "image/png",
+          "sizes": "512x512",
+          "purpose": "maskable any"
+        }         
+      ]
+}

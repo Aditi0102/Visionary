@@ -5,5 +5,5 @@ class Document(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return self.uploaded_at
+        return str(self.uploaded_at)
 # Create your models here.

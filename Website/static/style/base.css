@@ -11,6 +11,7 @@
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
+    overflow: overlay;
   }
   
   a {
@@ -337,7 +338,11 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(0deg, #2a2c39 0%, #33364a 100%);
+    /* background: linear-gradient(0deg, #2a2c39 0%, #33364a 100%); */
+    background: url("../assets/img/bg.jpeg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
     padding: 0;
   }
   
@@ -697,6 +702,8 @@ body {
   .cta {
     background: #2a2c39;
     padding: 80px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   
   .cta h3 {
