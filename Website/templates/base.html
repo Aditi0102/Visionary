@@ -19,19 +19,6 @@
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <!-- Service Worker Registration -->
-  <script type="text/javascript">
-    // Initialize the service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/serviceworker.js').then(function (registration) {
-        // Registration was successful
-        console.log('portfolio-progressive-web-app: ServiceWorker registration successful');
-      }, function (err) {
-        // registration failed :(
-        console.log('portfolio-progressive-web-app: ServiceWorker registration failed: ', err);
-      });
-    }
-
-  </script>
   <title>
     Home Page
   </title>
@@ -56,7 +43,19 @@
   <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="static/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <script type="text/javascript">
+    // Initialize the service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function (registration) {
+        // Registration was successful
+        console.log('portfolio-progressive-web-app: ServiceWorker registration successful');
+      }, function (err) {
+        // registration failed :(
+        console.log('portfolio-progressive-web-app: ServiceWorker registration failed: ', err);
+      });
+    }
 
+  </script>
 </head>
 
 <body>
@@ -76,7 +75,6 @@
           <li><a href="#services">Tech Stack</a></li>
           <li><a href="#portfolio">Results</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -90,7 +88,7 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Team <span>Visionary</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Unfurling the incognizance of Reality</p>
+          <p class="animate__animated fanimate__adeInUp">Unfurling the Incognizance of Reality</p>
 
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
@@ -625,7 +623,7 @@
   <footer id="footer">
     <div class="container">
       <h3>Team Visionary</h3>
-      <p>Unfurling the incognizance of Reality.</p>
+      <p>Unfurling the Incognizance of Reality.</p>
 
       <div class="copyright">
         &copy; Copyright <strong><span>Team Visionary</span></strong>. All Rights Reserved

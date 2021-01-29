@@ -1,4 +1,4 @@
-const CACHE = 'cache_vis1';
+const CACHE = 'cache_vis123';
 const filestoCache = [
                       '/static/style/base.css',
                       '/static/assets/img/favicon.png',
