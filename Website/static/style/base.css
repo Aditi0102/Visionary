@@ -62,13 +62,19 @@ body {
     background: #fc7c1f;
     color: #fff;
   }
-  
+  .msg_call{
+    font-size: 20px;
+    margin-top: 10px;
+  }
   /*--------------------------------------------------------------
   # Disable AOS delay on mobile
   --------------------------------------------------------------*/
   @media screen and (max-width: 768px) {
     [data-aos-delay] {
       transition-delay: 0 !important;
+    }
+    .msg_call{
+      font-size: 15px;
     }
   }
   
@@ -342,7 +348,6 @@ body {
     background: url("../assets/img/bg.jpeg") center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    z-index: -1;
     padding: 0;
   }
   

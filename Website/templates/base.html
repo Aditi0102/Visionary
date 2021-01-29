@@ -56,16 +56,17 @@
     }
 
   </script>
+
 </head>
 
 <body>
   <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="{%url 'home'%}"> </a></h1>
-
-        <a href="{%url 'home'%}"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="{%url 'home'%}">
+          <h1 class="text-light mx-3" style="display: inline-block; font-family: 'Open Sans';">Interstice</h1>
+        </a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -88,9 +89,7 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Team <span>Visionary</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Unfurling the Incognizance of Reality</p>
-
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+          <p class="animate__animated fanimate__adeInUp msg_call">Unfurling the Incognizance of Reality</p>
         </div>
       </div>
 
@@ -98,13 +97,13 @@
       <div class="carousel-item">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Problem</h2>
-          <p class="animate__animated animate__fadeInUp">Surveillance is an integral part of security and control. The
+          <p class="animate__animated animate__fadeInUp msg_call">Surveillance is an integral part of security and
+            control. The
             job requires extended periods of looking into multiple video footages for an undesirable incident or
             evidence following the incident, which proves to be highly inefficient considering the massive amount of
             footages. This manual task provides evidence in court but is rarely used to prevent crime or react to it in
             real-time.
           </p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
 
@@ -112,18 +111,21 @@
       <div class="carousel-item">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Our Solution</h2>
-          <p class="animate__animated animate__fadeInUp">Developing a real-time crime detection technology that can be
+          <p class="animate__animated animate__fadeInUp msg_call">Developing a real-time crime detection technology that
+            can be
             integrated with any security system, to ensure public safety through visual crowd surveillance.</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
 
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev"
+        onclick="$('#myCarousel').carousel('prev')">
         <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
 
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next"
+        onclick="$('#myCarousel').carousel('next')">
         <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
@@ -191,14 +193,14 @@
         <ul class="nav nav-tabs row d-flex">
           <li class="nav-item col-3" data-aos="zoom-in">
             <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-              <i class="ri-bar-chart-2-fill"></i>
-              <h4 class="d-none d-lg-block">STATISTICS</h4>
+              <i class="ri-body-scan-line"></i>
+              <h4 class="d-none d-lg-block">WOMEN SECURITY</h4>
             </a>
           </li>
           <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
             <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-              <i class="ri-body-scan-line"></i>
-              <h4 class="d-none d-lg-block">FIGHTING</h4>
+              <i class="ri-briefcase-2-line"></i>
+              <h4 class="d-none d-lg-block">CHILD SAFETY</h4>
             </a>
           </li>
           <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200">
@@ -209,7 +211,7 @@
           </li>
           <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="300">
             <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-              <i class="ri-building-fill"></i>
+              <i class="ri-building-line"></i>
               <h4 class="d-none d-lg-block">PUBLIC PROTECTION</h4>
             </a>
           </li>
@@ -241,7 +243,7 @@
                 </p>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="static/assets/img/features-1.png" alt="" class="img-fluid">
+                <img src="static/assets/img/features-2.png" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -251,7 +253,7 @@
                 <h3>Lack of a Proper Surveillance system has affected every generation.</h3>
                 <br>
                 <p>
-                  Innumerable individuals face abuse in public places which goes undetected and unreported due
+                  Innumerable children face abuse in public places which goes undetected and unreported due
                   to the rigid and worn out process of CCTV cameras and all crimes are pushed deep down in oblivion.
                 </p>
 
@@ -270,7 +272,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="static/assets/img/features-2.png" alt="" class="img-fluid">
+                <img src="static/assets/img/child.png" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -326,22 +328,20 @@
         </div>
       </div>
       <!-- ======= CTA Section ======= -->
-      <div class="container-fluid cta mt-5">
+      <div class="container-fluid cta mt-5" style="box-shadow: 0px 10px 10px 2px #333;">
         <div class="row" data-aos="zoom-out">
           <div class="col-lg-12 text-center text-lg-left">
-            <h3>Call To Action</h3>
-            <p>Practical Demonstration of our project, you just have to upload a video here and our model will predict
-              the results.</p>
+            <h3>Call to Action</h3>
+            <p class="msg_call">Want to test our solution without getting your hands dirty? Just upload a video here and
+              see the magic happen!
+            </p>
           </div>
-          <form method="post" enctype="multipart/form-data">
+          <form method="post" enctype="multipart/form-data" id="vid_form">
             <div class="row">
               <div class="col-12 d-flex justify-content-center">
                 {% csrf_token %}
                 <input type="file" name="vid" required="" id="id_vid" hidden>
                 <label for="id_vid" class="cta-btn align-middle" style="cursor: pointer;">Choose Video File</label>
-              </div>
-              <div class="col-12 d-flex justify-content-center">
-                <button type="submit" class="cta-btn align-middle" style="outline: none; border: none;">Upload</button>
               </div>
             </div>
           </form>
@@ -363,10 +363,12 @@
             <div class="icon-box" data-aos="zoom-in-left">
               <div class="icon"><i class="las la-chalkboard" style="color: #ff689b;"></i></div>
               <h4 class="title"><a href="">Machine & Deep Learning</a></h4>
-              <p class="description">We used TensorFlow that is an end-to-end open source platform for machine learning.
-                We used
-                comprehensive and flexible tools, libraries and high-level APIs like Keras to build and train our ML
-                model.</p>
+              <p class="description">For this project, we used TensorFlow: an end-to-end open source platform for
+                machine learning
+                with comprehensive and flexible tools, libraries and high-level APIs like Keras to build and train our
+                ML
+                model.
+              </p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
@@ -382,9 +384,8 @@
             <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
               <div class="icon"><i class="las la-globe" style="color: #3fcdc7;"></i></div>
               <h4 class="title"><a href="">WEB DEVELOPMENT</a></h4>
-              <p class="description">To increase the effectiveness of our presentation we developed a mini-website using
-                HTML,CSS and Javascript and used django framework in our backend to make the site responsive, which was
-                then hosted on Amazon Web Services.</p>
+              <p class="description">To increase the effectiveness of our presentation, we developed a mini-website
+                powered by Django framework, with the Tensorflow model at its heart.</p>
             </div>
           </div>
 
@@ -651,4 +652,9 @@
 
   <!-- Template Main JS File -->
   <script src="static/assets/js/main.js"></script>
+  <script type="text/javascript">
+    document.getElementById('vid_form').onchange = function () {
+      document.getElementById('vid_form').submit();
+    };
+  </script>
 </body>
