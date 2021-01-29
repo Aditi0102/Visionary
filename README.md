@@ -27,7 +27,7 @@ To use the website, please follow the following steps:
 
 <br>
 
-*Note :* This Website required **OpenCV, Numpy** and **Tensorflow** installed on the host machine.
+*Note :* This Website required **OpenCV, Numpy, Django** and **Tensorflow** installed on the host machine.
 
 <br>
 
