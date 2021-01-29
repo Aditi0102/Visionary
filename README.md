@@ -27,7 +27,8 @@ To use the website, please follow the following steps:
 
 <br>
 
-*Note :* This Website required **OpenCV, Numpy, Django** and **Tensorflow** installed on the host machine.
+*Note :* This Website required **OpenCV, Numpy, Django** and **Tensorflow** installed on the host machine. To install these dependencies, run the following command
+> pip3 install -r requirements.txt
 
 <br>
 
