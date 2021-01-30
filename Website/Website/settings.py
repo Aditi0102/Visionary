@@ -126,4 +126,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
 
-MODEL = keras.models.load_model('Models/BaseModel.h5')
+MODEL = keras.models.load_model('Models/CustomisedCNNModel.h5')
