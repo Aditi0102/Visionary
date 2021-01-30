@@ -32,7 +32,7 @@ To use the website, please follow the following steps:
 
 <br>
 
-### &nbsp; Current Progress
+###  ✍️ &nbsp; Current Progress
 We tried and tested various architectures for this project. A brief summary and stats for each is given below:
 1. **Customised CNN Model**: The customised CNN model with optimised parameters performed well on the training and sufficiently good in the test dataset. The architecture is currently being used by the website and test.ipynb file.
 
@@ -74,3 +74,4 @@ We tried and tested various architectures for this project. A brief summary and 
 ### ⚙️ &nbsp; Ultimate Objective
 The model uses the technique of Multiple Object Detection with Localization tracking the movement of people and then categorizing it into violent or non-violent behavior. Our proposed solution will ensure Public Safety and security without any human toil with an instant alert to the concerned authorities. Through ***Crowd Monitoring and Behavioral Analysis*** our solution aims to evoke the sense of security in men and women. The constant rise of criminal activities, their unexpectedness, and scope of harm that can be inflicted can be exponentially reduced through our proposed system. 
 
+*Link to current protoytpe* : [Click Here](http://ec2-3-239-148-183.compute-1.amazonaws.com:8000/)
