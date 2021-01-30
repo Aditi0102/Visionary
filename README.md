@@ -61,6 +61,7 @@ We tried and tested various architectures for this project. A brief summary and 
     <br><br>
 
 4. **Inception+CustomisedCNN**: Using transfer learning of Inception Architecture and passing it to CustomisedCNN trained the model with satisfactory results. 
+*Link to model file* : [Google Drive Link](https://drive.google.com/file/d/1yTbm7oMn1znMEOD7X-s9NDqtyvpUZfTe/view?usp=sharing)
     - Training_accuracy: 89%
     - Validation_accuracy: 76%
     - Epochs: 30
